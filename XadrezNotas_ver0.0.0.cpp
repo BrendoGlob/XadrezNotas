@@ -4,9 +4,9 @@
 #include <stdlib.h>
 
 int Board[8][8] = 
-/*ESTE TABULEIRO EST¡ REPRESENTADO POR N⁄MEROS (8◊8).
-?NUMEROS PARES(BRANCAS), NUMEROS ÕMPARES(PRETAS).
-10(pe„o) 20(bispo) 30(cavalo) 40(torre) 50(rainha) 60(rei)*/
+/*ESTE TABULEIRO EST√Å REPRESENTADO POR N√öMEROS (8√ó8).
+?NUMEROS PARES(BRANCAS), NUMEROS √çMPARES(PRETAS).
+10(pe√£o) 20(bispo) 30(cavalo) 40(torre) 50(rainha) 60(rei)*/
 {
  41, 31, 21, 51, 61, 21, 31, 41,
  11, 11, 11, 11, 11, 11, 11, 11,
@@ -18,11 +18,11 @@ int Board[8][8] =
  40, 30, 20, 50, 60, 20, 30, 40,
 };
 
-//FUN«’ES:
+//FUN√á√ïES:
 void PrintBoard( void );//Imprime o Tabuleiro para o jogador.
-void SelectPiece( int vez, bool &RokB1, bool &RokP1, bool &RokB2, bool &RokP2, int &DePassagemL, int &DePassagemC );//Seleciona e move uma peÁa.
-void BoardClean ( void );//Limpa Tabuleiro(ameaÁa das peÁas representada por outros n˙meros).
-//FUN«’ES!
+void SelectPiece( int vez, bool &RokB1, bool &RokP1, bool &RokB2, bool &RokP2, int &DePassagemL, int &DePassagemC );//Seleciona e move uma pe√ßa.
+void BoardClean ( void );//Limpa Tabuleiro(amea√ßa das pe√ßas representada por outros n√∫meros).
+//FUN√á√ïES!
 
 int main()
 {
@@ -38,7 +38,7 @@ int main()
 	return 0;
 }
 
-//CORPOS DAS FUN«’ES:
+//CORPOS DAS FUN√á√ïES:
 void PrintBoard( void )
 {
 	printf("\n*| a b c d e f g h|*\n--------------------\n");
@@ -49,11 +49,11 @@ void PrintBoard( void )
 		{
 			switch( Board[ver][hor] )
 			{
-				case 2: printf(" X"); break;//SeleÁ„o Branca.
-				case 3: printf(" X"); break;//SeleÁ„o Preta.
+				case 2: printf(" X"); break;//Sele√ß√£o Branca.
+				case 3: printf(" X"); break;//Sele√ß√£o Preta.
 
-				case 10: printf(".1"); break;//Pe„o Branco.
-				case 11: printf(".A"); break;//Pe„o Preto.
+				case 10: printf(".1"); break;//Pe√£o Branco.
+				case 11: printf(".A"); break;//Pe√£o Preto.
 				case 20: printf(".2"); break;//Bispo Branco.
 				case 21: printf(".B"); break;//Bispo Preto.
 				case 30: printf(".3"); break;//Cavalo Branco.
@@ -65,16 +65,16 @@ void PrintBoard( void )
 				case 60: printf(".6"); break;//Rei Branco.
 				case 61: printf(".F"); break;//Rei Preto.
 
-				case 12: printf("!1"); break;//Pe„o Branco AmeaÁado.
-				case 13: printf("!A"); break;//Pe„o Preto AmeaÁado.
-				case 22: printf("!2"); break;//Bispo Branco AmeaÁado.
-				case 23: printf("!B"); break;//Bispo Preto AmeaÁado.
-				case 32: printf("!3"); break;//Cavalo Branco AmeaÁado.
-				case 33: printf("!C"); break;//Cavalo Preto AmeaÁado.
-				case 42: printf("!4"); break;//Torre Branca AmeaÁada.
-				case 43: printf("!D"); break;//Torre Preta AmeaÁada.
-				case 52: printf("!5"); break;//Rainha Branca AmeaÁada.
-				case 53: printf("!E"); break;//Rainha Preta AmeaÁada.
+				case 12: printf("!1"); break;//Pe√£o Branco Amea√ßado.
+				case 13: printf("!A"); break;//Pe√£o Preto Amea√ßado.
+				case 22: printf("!2"); break;//Bispo Branco Amea√ßado.
+				case 23: printf("!B"); break;//Bispo Preto Amea√ßado.
+				case 32: printf("!3"); break;//Cavalo Branco Amea√ßado.
+				case 33: printf("!C"); break;//Cavalo Preto Amea√ßado.
+				case 42: printf("!4"); break;//Torre Branca Amea√ßada.
+				case 43: printf("!D"); break;//Torre Preta Amea√ßada.
+				case 52: printf("!5"); break;//Rainha Branca Amea√ßada.
+				case 53: printf("!E"); break;//Rainha Preta Amea√ßada.
 				case 62: printf("!6"); break;//Rei Branco em Cheque.
 				case 63: printf("!F"); break;//Rei Preto em Cheque.
 
@@ -89,46 +89,46 @@ void PrintBoard( void )
 void SelectPiece( int vez, bool &RokB1, bool &RokP1, bool &RokB2, bool &RokP2, int &DePassagemL, int &DePassagemC )
 {
 		/***********************************
-	?Selecionar a peÁa para movÍ-la?
-	??Mover a PeÁa para a nova posiÁ„o??
+	?Selecionar a pe√ßa para mov√™-la?
+	??Mover a Pe√ßa para a nova posi√ß√£o??
 	***********************************/
 
 	int linha=0, coluna=0, DestLinha=0, DestColuna=0, peca, hor, ver;
 
 	PONTO1:
-	//?Selecionar uma peÁa:
+	//?Selecionar uma pe√ßa:
 	do
 	{
-		printf("\nDigite qual peÁa deseja mover(exemplo: 2(linha) 4(coluna))? ");
+		printf("\nDigite qual pe√ßa deseja mover(exemplo: 2(linha) 4(coluna))? ");
 		scanf("%d%d", &linha, &coluna);
 
-		//Checa se a casa selecionada È v·lida:
+		//Checa se a casa selecionada √© v√°lida:
 		if((linha<1 || linha >8)||(coluna<1 || coluna>8))
 		{
-			printf("\nVocÍ digitou errado!Tente novamente!\n");
+			printf("\nVoc√™ digitou errado!Tente novamente!\n");
 		}
 		else
-		//Checa se a casa selecionada est· vazia:
+		//Checa se a casa selecionada est√° vazia:
 		if (Board[8-linha][coluna-1] == 0)
 		{
-			printf("\nVocÍ selecionou uma casa vazia!Selecione uma peÁa!\n");
-			linha = 0, coluna = 0;//?isso far· o laÁo repetir!
+			printf("\nVoc√™ selecionou uma casa vazia!Selecione uma pe√ßa!\n");
+			linha = 0, coluna = 0;//?isso far√° o la√ßo repetir!
 		}
 		else
-		//Checa se È a vez das brancas uma peÁa branca deve ser selecionada e vice versa:
+		//Checa se √© a vez das brancas uma pe√ßa branca deve ser selecionada e vice versa:
 		if (((Board[8-linha][coluna-1] % 2 == 0)&&(vez == 1))||((Board[8-linha][coluna-1] % 2 != 0)&&(vez == 0)))
 		{
-			printf("\nVocÍ n„o pode selecionar uma peÁa do oponente!Seleciona as suas!\n");
-			linha = 0, coluna = 0;//?isso far· o laÁo repetir!
+			printf("\nVoc√™ n√£o pode selecionar uma pe√ßa do oponente!Seleciona as suas!\n");
+			linha = 0, coluna = 0;//?isso far√° o la√ßo repetir!
 		}
 	}while ((linha<1 || linha >8)||(coluna<1 || coluna>8));
 
-	linha = 8-linha;//se digitado 1, dever· ser acessado 0 em "Board[0][].
-	coluna -= 1;//se digitado 1, dever· ser acessado 0 em "Board[][0].
+	linha = 8-linha;//se digitado 1, dever√° ser acessado 0 em "Board[0][].
+	coluna -= 1;//se digitado 1, dever√° ser acessado 0 em "Board[][0].
 
-	//Nesses ifis? seleciona a peÁa e mostra seus possiveis destinos:
+	//Nesses ifis? seleciona a pe√ßa e mostra seus possiveis destinos:
 
-	if (Board[linha][coluna] == 10)//Pe„o Branco:
+	if (Board[linha][coluna] == 10)//Pe√£o Branco:
 	{
 		if (Board[linha-1][coluna] == 0)
 		{
@@ -145,7 +145,7 @@ void SelectPiece( int vez, bool &RokB1, bool &RokP1, bool &RokB2, bool &RokP2, i
 		peca = Board[linha][coluna];
 	}
 
-	if (Board[linha][coluna] == 11)//Pe„o Preto:
+	if (Board[linha][coluna] == 11)//Pe√£o Preto:
 	{
 		if (Board[linha+1][coluna] == 0)
 		{
@@ -389,7 +389,7 @@ void SelectPiece( int vez, bool &RokB1, bool &RokP1, bool &RokB2, bool &RokP2, i
 		if (Board[linha+1][coluna+1] == 0) Board[linha+1][coluna+1] = 2+vez;//Diagonal baixo direita.
 		if (Board[linha-1][coluna+1] == 0) Board[linha-1][coluna+1] = 2+vez;//Diagonal baixo esquerda.
 
-		//PeÁas do aders·rio brancas:
+		//Pe√ßas do aders√°rio brancas:
 		if ((Board[linha][coluna-1] %2 == 0)&&(vez == 1)) Board[linha][coluna-1] += 2;//Cima.
 		if ((Board[linha][coluna+1] %2 == 0)&&(vez == 1)) Board[linha][coluna+1] += 2;//Baixo.
 		if ((Board[linha-1][coluna] %2 == 0)&&(vez == 1)) Board[linha-1][coluna] += 2;//Esquerda.
@@ -399,7 +399,7 @@ void SelectPiece( int vez, bool &RokB1, bool &RokP1, bool &RokB2, bool &RokP2, i
 		if ((Board[linha+1][coluna+1] %2 == 0)&&(vez == 1)) Board[linha+1][coluna+1] += 2;//Diagonal baixo direita.
 		if ((Board[linha-1][coluna+1] %2 == 0)&&(vez == 1)) Board[linha-1][coluna+1] += 2;//Diagonal baixo esquerda.
 
-		//PeÁas do aders·rio pretas:
+		//Pe√ßas do aders√°rio pretas:
 		if ((Board[linha][coluna-1] %2 != 0)&&(vez == 0)) Board[linha][coluna-1] += 2;//Cima.
 		if ((Board[linha][coluna+1] %2 != 0)&&(vez == 0)) Board[linha][coluna+1] += 2;//Baixo.
 		if ((Board[linha-1][coluna] %2 != 0)&&(vez == 0)) Board[linha-1][coluna] += 2;//Esquerda.
@@ -430,38 +430,38 @@ void SelectPiece( int vez, bool &RokB1, bool &RokP1, bool &RokB2, bool &RokP2, i
 	PrintBoard();
 
 	/***********************************
-	?Selecionar a peÁa para movÍ-la?
-	?Mover a PeÁa para a nova posiÁ„o?
+	?Selecionar a pe√ßa para mov√™-la?
+	?Mover a Pe√ßa para a nova posi√ß√£o?
 	***********************************/
 
 	do
 	{
-		printf("\nDigite o local que deseja mover a peÁa? ");
+		printf("\nDigite o local que deseja mover a pe√ßa? ");
 		scanf("%d%d", &DestLinha, &DestColuna);
 
-		//Checa se foi digitado um n˙mero v·lido:
+		//Checa se foi digitado um n√∫mero v√°lido:
 		if ((DestLinha<1 || DestLinha >8)||(DestColuna<1 || DestColuna>8))
 		{
-			printf("\nVocÍ digitou errado!Tente novamente!\n");
+			printf("\nVoc√™ digitou errado!Tente novamente!\n");
 		}
 		else
-		//Checa se a casa selecionada est· vazia:
+		//Checa se a casa selecionada est√° vazia:
 		if (Board[8-DestLinha][DestColuna-1] == 0)
 		{
-			printf("\nVocÍ selecionou uma casa inv·lida, selecione o 'X' ou uma outra peÁa!\n");
+			printf("\nVoc√™ selecionou uma casa inv√°lida, selecione o 'X' ou uma outra pe√ßa!\n");
 		}
 		else
-		//Checa se o jogador escolheu um local com uma peÁa aliada:
-		for(int Blc = 6;Blc<57;Blc++)//Checa quais peÁas est„o ameaÁadas(14,15,24,25,34,35,44,45,46,47,54,55,56,57).
+		//Checa se o jogador escolheu um local com uma pe√ßa aliada:
+		for(int Blc = 6;Blc<57;Blc++)//Checa quais pe√ßas est√£o amea√ßadas(14,15,24,25,34,35,44,45,46,47,54,55,56,57).
 		{
 			if (Blc % 2 ==0){ Blc += 8; }
 
-			//Se a casa n„o estiver vazia, e n„o for uma casa selecionada pora possivel jogada.
+			//Se a casa n√£o estiver vazia, e n√£o for uma casa selecionada pora possivel jogada.
 			if ((Board[8-DestLinha][DestColuna-1] >0)&&(Board[8-DestLinha][DestColuna-1] != 2+vez))
-			//Se escolheu peÁa branca na vez das brancas, ou escolheu peÁa preta na vez das pretas:
+			//Se escolheu pe√ßa branca na vez das brancas, ou escolheu pe√ßa preta na vez das pretas:
 			if (((Board[8-DestLinha][DestColuna-1] % 2 == 0)&&(vez == 0)) || ((Board[8-DestLinha][DestColuna-1] % 2 != 0)&&(vez == 1)))
 			{
-				printf("\nVocÍ n„o pode comer uma peÁa da sua 'cor'! Tente de novo ou selecione outra.\n");
+				printf("\nVoc√™ n√£o pode comer uma pe√ßa da sua 'cor'! Tente de novo ou selecione outra.\n");
 				linha = 0, coluna = 0, DestLinha = 0, DestColuna = 0, peca = 0;
 				BoardClean();
 				PrintBoard();
@@ -471,21 +471,21 @@ void SelectPiece( int vez, bool &RokB1, bool &RokP1, bool &RokB2, bool &RokP2, i
 	}while ((DestLinha<1 || DestLinha >8)||(DestColuna<1 || DestColuna>8));
 
 	DestLinha = 8-DestLinha;//inverte os numeros ( 8 equivale a 0, 7 equivale a 1, 6 equivale a 2 ...)
-	DestColuna -= 1;//se digitado 1, dever· ser acessado 0 em "Board[][0].
+	DestColuna -= 1;//se digitado 1, dever√° ser acessado 0 em "Board[][0].
 
-	//?Move a peÁa:
+	//?Move a pe√ßa:
 	if ((Board[DestLinha][DestColuna] == 2)||(Board[DestLinha][DestColuna] == 3))
 	//Se uma casa selecionada:
 	{
-		Board[DestLinha][DestColuna] = peca;//Aloca a peÁa em seu destino.
-		Board[linha][coluna] = 0;//Retira a peÁa de sua origem.
+		Board[DestLinha][DestColuna] = peca;//Aloca a pe√ßa em seu destino.
+		Board[linha][coluna] = 0;//Retira a pe√ßa de sua origem.
 		if (( DestLinha == DePassagemL )&&( DestColuna == DePassagemC ))
 		{
 			if ( vez == 0)Board[DePassagemL+1][DePassagemC] = 0;
 			if ( vez == 1)Board[DePassagemL-1][DePassagemC] = 0;
 		}
 
-		//Ativa a Jogada "El_passant" no Pe„o:
+		//Ativa a Jogada "El_passant" no Pe√£o:
 		if (( peca == 10 )&&(DestLinha == 4))
 		{
 			DePassagemL = DestLinha+1, DePassagemC = DestColuna;
@@ -498,17 +498,17 @@ void SelectPiece( int vez, bool &RokB1, bool &RokP1, bool &RokB2, bool &RokP2, i
 		}
 		else{ DePassagemL = -1, DePassagemC = -1; }
 
-	}//ou uma peÁa do oponente È escolhida.
+	}//ou uma pe√ßa do oponente √© escolhida.
 	else
 	{
-		for(int Blc = 4;Blc<54;Blc++)//Checa quais peÁas est„o ameaÁadas(12,13,22,23,32,33,42,43,42,43,52,53).
+		for(int Blc = 4;Blc<54;Blc++)//Checa quais pe√ßas est√£o amea√ßadas(12,13,22,23,32,33,42,43,42,43,52,53).
 		{
 			if (Blc % 2 == 0){ Blc += 8; }
 
 			if (Board[DestLinha][DestColuna] == Blc)
 			{
-				Board[DestLinha][DestColuna] = peca;//Aloca a peÁa em seu destino.
-				Board[linha][coluna] = 0;//Retira a peÁa de sua origem.
+				Board[DestLinha][DestColuna] = peca;//Aloca a pe√ßa em seu destino.
+				Board[linha][coluna] = 0;//Retira a pe√ßa de sua origem.
 			}
 		}
 	}
@@ -564,15 +564,15 @@ void SelectPiece( int vez, bool &RokB1, bool &RokP1, bool &RokB2, bool &RokP2, i
 	}
 
 	/***********************************
-	??Selecionar a peÁa para movÍ-la??
-	?Mover a PeÁa para a nova posiÁ„o?
+	??Selecionar a pe√ßa para mov√™-la??
+	?Mover a Pe√ßa para a nova posi√ß√£o?
 	***********************************/
 
-	BoardClean();//Limpa o Tabuleiro das ameaÁas!
+	BoardClean();//Limpa o Tabuleiro das amea√ßas!
 
-	if (((Board[DestLinha][DestColuna] == 10)&&(DestLinha == 0))||((Board[DestLinha][DestColuna] == 11)&&(DestLinha == 7)))//Se um pe„o chegar ao lado oposto:
+	if (((Board[DestLinha][DestColuna] == 10)&&(DestLinha == 0))||((Board[DestLinha][DestColuna] == 11)&&(DestLinha == 7)))//Se um pe√£o chegar ao lado oposto:
 	{
-		printf("***ParabÈns!***\nSeu pe„o chegou ao lado oposto, em qual peÁa gostaria de transform·-lo?");
+		printf("***Parab√©ns!***\nSeu pe√£o chegou ao lado oposto, em qual pe√ßa gostaria de transform√°-lo?");
 		PONTO4:
 		printf("\n1?bispo. 2?cavalo. 3?torre. 4?rainha.\n?");
 		scanf("%d", &Board[DestLinha][DestColuna]);
@@ -582,30 +582,30 @@ void SelectPiece( int vez, bool &RokB1, bool &RokP1, bool &RokB2, bool &RokP2, i
 			case 2: Board[DestLinha][DestColuna] = 30+vez; break;
 			case 3: Board[DestLinha][DestColuna] = 40+vez; break;
 			case 4: Board[DestLinha][DestColuna] = 50+vez; break;
-			default: { printf("\nOpÁ„o inv·linda!tente novamente!"); goto PONTO4; } break;
+			default: { printf("\nOp√ß√£o inv√°linda!tente novamente!"); goto PONTO4; } break;
 		}
 	}
 }
 
 void BoardClean ( void )
 {
-	for(int ver=0; ver<8; ver++)//Limpa o Tabuleiro de ameaÁas:
+	for(int ver=0; ver<8; ver++)//Limpa o Tabuleiro de amea√ßas:
 	{
 		for(int hor=0; hor<8; hor++)
 		{
 			if ((Board[ver][hor] == 2)||(Board[ver][hor] == 3))
 			Board[ver][hor] = 0;
 			
-			for(int Blc = 4;Blc<64;Blc++)//Checa quais peÁas est„o ameaÁadas(12,13,22,23,32,33,42,43,52,53,62,63).
+			for(int Blc = 4;Blc<64;Blc++)//Checa quais pe√ßas est√£o amea√ßadas(12,13,22,23,32,33,42,43,52,53,62,63).
 			{
 				if (Blc % 2 ==0){ Blc += 8; }
 
 				if (Board[ver][hor] == Blc)
 				{
-					Board[ver][hor] -=2;//DesameaÁa a peÁa.
+					Board[ver][hor] -=2;//Desamea√ßa a pe√ßa.
 				}
 			}
 		}
 	}
 }
-//CORPOS DAS FUN«’ES!
+//CORPOS DAS FUN√á√ïES! 
